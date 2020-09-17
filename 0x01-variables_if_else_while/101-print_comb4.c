@@ -3,7 +3,7 @@
  * main -Entry
  * Return: 0
  */
-int main(voiu)
+int main(void)
 {
 	int u;
 	int d;
