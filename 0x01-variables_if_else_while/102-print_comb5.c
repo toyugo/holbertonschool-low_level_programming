@@ -5,15 +5,9 @@
  */
 int main(void)
 {
-	int u;
-	int d;
-	int u1;
-	int d1;
 	int cp1;
 	int cp2;
 
-	d1 = '0';
-	cp1 = 0;
 	for (cp1 = 0; cp1 < 100; cp1++)
 	{
 		for (cp2 = 0; cp2 < 100; cp2++)
