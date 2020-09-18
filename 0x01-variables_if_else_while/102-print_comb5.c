@@ -23,7 +23,7 @@ int main(void)
 			{
 				for (u = '0'; u <= '9'; u++)
 				{
-					if ((cp2 > cp1) || (cp2 == 99 && cp1 == 98))
+					if ((cp2 > cp1) || (cp2 != 99 && cp1 != 98))
 					{
 						putchar(d1);
 						putchar(u1);
