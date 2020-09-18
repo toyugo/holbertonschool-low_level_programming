@@ -14,29 +14,23 @@ int main(void)
 
 	d1 = '0';
 	cp1 = 0;
-	for (d1 = '0'; d1 <= '9'; d1++)
+	for (cp1 = 0; cp1 < 100; cp1++)
 	{
-		for (u1 = '0'; u1 <= '9'; u1++)
+		for (cp2 = 0; cp2 < 100; cp2++)
 		{
-			cp2 = 0;
-			for (d = '0'; d <= '9'; d++)
+			if (cp2 > cp1)
 			{
-				for (u = '0'; u <= '9'; u++)
+				putchar(cp1 / 10 + '0');
+				putchar(cp1 % 10 + '0');
+				putchar(' ');
+				putchar(cp2 / 10 + '0');
+				putchar(cp2 % 10 + '0');
+				if (cp1 != 98 || cp2 != 99)
 				{
-					if ((cp2 > cp1) || (cp2 != 99 && cp1 != 98))
-					{
-						putchar(d1);
-						putchar(u1);
-						putchar(' ');
-						putchar(d);
-						putchar(u);
-						putchar(',');
-						putchar(' ');
-					}
-					cp2++;
+					putchar(',');
+					putchar(' ');
 				}
 			}
-			cp1++;
 		}
 	}
 	putchar('\n');
