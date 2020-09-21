@@ -1,13 +1,14 @@
 #include "holberton.h"
 /**
- * main - entry
- * print_alphabet - print alphabet
+ * print_sign - print_sign
+ * @c: int value
  * Return: 0
  */
 
 int print_sign(int c)
 {
 	int i;
+
 	if (c > 0)
 	{
 		_putchar('+');
