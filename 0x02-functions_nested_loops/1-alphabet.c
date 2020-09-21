@@ -1,6 +1,5 @@
 #include "holberton.h"
 /**
- * main - entry
  * print_alphabet - print alphabet
  * Return: 0
  */
