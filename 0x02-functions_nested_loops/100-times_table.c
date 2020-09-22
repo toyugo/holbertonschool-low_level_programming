@@ -19,7 +19,7 @@ void print_times_table(int n)
 			if (!(n > 15 || n < 0))
 			{
 				res = i * j;
-				if ( j == 0 )
+				if (j == 0)
 					printf("%i", res);
 				else if (res < 10)
 					printf("   %i", res);
