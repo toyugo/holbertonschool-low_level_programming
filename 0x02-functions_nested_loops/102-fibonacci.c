@@ -14,7 +14,7 @@ int main(void)
 
 	i = 1;
 	j = 2;
-	printf("1 ,2 ,");
+	printf("1, 2, ");
 	for (cp = 3; cp <= 50; cp++)
 	{
 		k = i + j;
@@ -25,5 +25,6 @@ int main(void)
 		else
 			printf("%li", k);
 	}
+	printf("\n");
 	return (0);
 }
