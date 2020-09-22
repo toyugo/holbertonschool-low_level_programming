@@ -20,7 +20,10 @@ int main(void)
 		k = i + j;
 		i = j;
 		j = k;
-		printf("%li ,", k);
+		if (cp != 50)
+			printf("%li ,", k);
+		else
+			printf("%li", k);
 	}
 	return (0);
 }
