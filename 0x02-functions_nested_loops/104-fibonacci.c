@@ -15,12 +15,12 @@ int main(void)
 	i = 1;
 	j = 2;
 	printf("1, 2, ");
-	for (cp = 3; cp <= 100; cp++)
+	for (cp = 3; cp <= 98; cp++)
 	{
 		k = i + j;
 		i = j;
 		j = k;
-		if (cp != 100)
+		if (cp != 98)
 			printf("%lu, ", k);
 		else
 			printf("%lu", k);
