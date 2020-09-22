@@ -21,7 +21,7 @@ int main(void)
 		i = j;
 		j = k;
 		if (cp != 50)
-			printf("%li ,", k);
+			printf("%li, ", k);
 		else
 			printf("%li", k);
 	}
