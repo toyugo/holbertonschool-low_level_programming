@@ -7,9 +7,9 @@
 
 int main(void)
 {
-	long unsigned i;
-	long unsigned j;
-	long unsigned k;
+	unsigned long i;
+	unsigned long j;
+	unsigned long k;
 	int cp;
 
 	i = 1;
