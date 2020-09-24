@@ -1,5 +1,3 @@
-#include "holberton.h"
-#include <stdio.h>
 /**
  * _isdigit - upper
  * @c
