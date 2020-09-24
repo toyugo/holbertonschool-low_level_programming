@@ -1,6 +1,7 @@
 #include <stdio.h>
 /**
  * print_triangle - print_triangle
+ * @size: size
  * Return: 0
  */
 
