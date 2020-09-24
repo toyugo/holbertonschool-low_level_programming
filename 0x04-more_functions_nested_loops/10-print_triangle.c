@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * print_triangle - print_triangle
- * @size: size
+ * @size: size var
  * Return: 0
  */
 
