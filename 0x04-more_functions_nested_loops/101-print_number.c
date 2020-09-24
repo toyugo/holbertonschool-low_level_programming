@@ -7,10 +7,10 @@
 
 void print_number(int n)
 {
-	int i;
-	int nbcar;
-	int nbcarpower;
-	int n1;
+	unsigned int i;
+	unsigned int nbcar;
+	unsigned int nbcarpower;
+	unsigned int n1;
 
 	nbcar = 0;
 	if (n < 0)
