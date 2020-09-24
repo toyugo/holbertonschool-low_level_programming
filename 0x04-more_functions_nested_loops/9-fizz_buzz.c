@@ -20,8 +20,7 @@ int main(void)
 			printf("%i", i);
 		if (i != 100)
 			printf(" ");
-		if (i == 100)
-			printf("\n");
 	}
+	printf("\n");
 	return (0);
 }
