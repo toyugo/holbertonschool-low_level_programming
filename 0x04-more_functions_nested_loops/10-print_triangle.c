@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - main
+ * print_triangle - print_triangle
  * Return: 0
  */
 
@@ -17,7 +17,7 @@ void print_triangle(int size)
 	{
 		for (j = 0; size > 0; j++)
 		{
-			for (i = 0; i < size-1; i++)
+			for (i = 0; i < size - 1; i++)
 			{
 				printf(" ");
 			}
