@@ -1,6 +1,6 @@
 /**
  * _isdigit - upper
- * @c
+ * @c: Number
  * Return: 0
  */
 
