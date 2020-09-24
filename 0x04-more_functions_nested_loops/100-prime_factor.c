@@ -15,7 +15,7 @@ int main(void)
 	for (i = 2; i < nb; i++)
 		while (nb % i == 0)
 			nb = nb / i;
-	printf("%li", nb);
+	printf("%li\n", nb);
 
 	return (0);
 }
