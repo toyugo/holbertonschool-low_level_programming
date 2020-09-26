@@ -42,7 +42,7 @@ int main(void)
 			a2 = b2;
 			b2 = c2;
 			if (i != 98)
-				printf("%lu%lu ,", c1, c2);
+				printf("%lu%lu, ", c1, c2);
 			else
 				printf("%lu%lu\n", c1, c2);
 		}
