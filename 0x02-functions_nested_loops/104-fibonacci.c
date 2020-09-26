@@ -7,10 +7,9 @@
 
 int main(void)
 {
-	unsigned long a = 1, b = 2, c, a2 = 0;
+	unsigned long a = 1, b = 2, c, a2 = 0, ncut = 10000000000;
 	unsigned long i, b2, c2, a1, b1, c1;
-	unsigned long ncut = 10000000000;
-	
+
 	printf("1, 2, ");
 	for (i = 3; i <= 98; i++)
 	{
