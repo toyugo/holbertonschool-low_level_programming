@@ -7,10 +7,11 @@
 
 int main(void)
 {
-	unsigned long a = 1, b = 2, c = 3, a2 = 0;
+	unsigned long a = 1, b = 2, c, a2 = 0;
 	unsigned long i, b2, c2, a1, b1, c1;
 	unsigned long ncut = 10000000000;
-
+	
+	printf("1, 2, ");
 	for (i = 2; i <= 98; i++)
 	{
 		if (a + b > b)
@@ -18,7 +19,7 @@ int main(void)
 			c = a + b;
 			a = b;
 			b = c;
-			printf("%lu ,", c);
+			printf("%lu, ", c);
 		}
 		else
 		{
