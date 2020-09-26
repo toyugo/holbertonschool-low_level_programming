@@ -12,7 +12,7 @@ int main(void)
 	unsigned long ncut = 10000000000;
 	
 	printf("1, 2, ");
-	for (i = 2; i <= 98; i++)
+	for (i = 3; i <= 98; i++)
 	{
 		if (a + b > b)
 		{
