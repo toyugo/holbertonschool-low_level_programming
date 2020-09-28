@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
 * _strlen - _strlen
 * @s: string
@@ -23,12 +24,14 @@ void puts_half(char *str)
 {
 	int i;
 	int size;
+	int max;
 
-	if (size % 2 == 0)
-		size = (_strlen(str) - 1) / 2;
+	max = _strlen(str);
+	if (max % 2 != 0)
+		size = (max - 1) / 2;
 	else
-		size = (_strlen(str) / 2);
-	for (i = size; i < size; i++)
+		size = max / 2;
+	for (i = size; i < max; i++)
 		_putchar(str[i]);
 	_putchar('\n');
 }
