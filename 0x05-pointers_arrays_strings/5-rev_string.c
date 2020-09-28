@@ -1,24 +1,34 @@
 #include "holberton.h"
 /**
-* rev_string - rev_string
+* _strlen - _strlen
 * @s: string
 * Return: Always 0.
+*/
+
+int _strlen(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+	;
+	return (i);
+}
+
+/**
+* rev_string - rev_string
+* @s: string
 */
 
 void rev_string(char *s)
 {
 	int i;
-	int j;
 	int size;
+	char tmp[_strlen(s)];
 
-	for (i = 0; s[i] != '\0'; i++)
-	;
-	size = i;
-
-	char c[size + 1];
+	size = _strlen(s);
 
 	for (i = 0; i <= size; i++)
-		c[i] = s[i];
+		tmp[i] = s[i];
 	for (i = 0; i < size; i++)
-		s[i] = c[size - 1 - i];
+		s[i] = tmp[size - 1 - i];
 }
