@@ -1,9 +1,9 @@
 #include "holberton.h"
 /**
-* _strlen - _strlen
-* @s: string
-* Return: Always 0.
-*/
+ * _strlen - strlen
+ * @s: string
+ * Return: Always 0.
+ */
 
 int _strlen(char *s)
 {
@@ -15,9 +15,9 @@ int _strlen(char *s)
 }
 
 /**
-* rev_string - rev_string
-* @s: string
-*/
+ * rev_string - rev_string
+ * @s: string
+ */
 
 void rev_string(char *s)
 {
