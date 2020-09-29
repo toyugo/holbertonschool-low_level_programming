@@ -13,6 +13,7 @@ int _atoi(char *s)
 	int res = 0;
 	int coef = 1;
 	int i;
+	int sign = 1;
 
 /* Detect start number */
 	for (i = 0; !(s[i] >= '0' && s[i] <= '9') && s[i] != '\0'; i++)
@@ -22,7 +23,7 @@ int _atoi(char *s)
 	for (; s[i] >= '0' && s[i] <= '9'; i++)
 	;
 	ednb = i;
-/* Detect end number */
+/* calculate len number*/
 	lennb = ednb - stnb;
 /* Convert Number */
 	for (i = 1; i < lennb ; i++)
@@ -32,7 +33,14 @@ int _atoi(char *s)
 		res += (s[stnb + i] - '0') * coef;
 		coef /= 10;
 	}
+	for (i = 0; i < stnb; i++)
+	{
+		if (s[i] == '-')
+		{
+			sign = sign * -1;
+		}
+	}
 	if (s[stnb - 1] == '-')
-		res = res * -1;
+		res = res * sign;
 	return (res);
 }
