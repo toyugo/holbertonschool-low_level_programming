@@ -23,12 +23,15 @@ void rev_string(char *s)
 {
 	int i;
 	int size;
-	char tmp[_strlen(s)];
+	char tmp;
 
 	size = _strlen(s);
+	size -= 1;
 
-	for (i = 0; i <= size; i++)
-		tmp[i] = s[i];
-	for (i = 0; i < size; i++)
-		s[i] = tmp[size - 1 - i];
+	for (i = 0; i < size / 2; i++)
+	{
+		tmp = s[i];
+		s[i] = s[size - i];
+		s[size - i] = tmp;
+	}
 }
