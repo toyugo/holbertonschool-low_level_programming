@@ -9,8 +9,8 @@ int _atoi(char *s)
 	int stnb;
 	int ednb;
 	int lennb;
-	unsigned int res = 0;
-	unsigned int coef = 1;
+	int res = 0;
+	int coef = 1;
 	int i = 0;
 	int sign = 1;
 
