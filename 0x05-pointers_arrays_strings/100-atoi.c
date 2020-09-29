@@ -12,7 +12,7 @@ int _atoi(char *s)
 	int lennb;
 	int res = 0;
 	int coef = 1;
-	int i;
+	int i = 0;
 	int sign = 1;
 
 /* Detect start number */
