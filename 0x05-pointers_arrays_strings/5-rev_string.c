@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 /**
  * _strlen - strlen
  * @s: string
@@ -31,7 +32,8 @@ void rev_string(char *s)
 	for (i = 0; i < size / 2; i++)
 	{
 		tmp = s[i];
-		s[i] = s[size - i];
-		s[size - i] = tmp;
+		s[i] = s[size];
+		s[size] = tmp;
+		size--;
 	}
 }
