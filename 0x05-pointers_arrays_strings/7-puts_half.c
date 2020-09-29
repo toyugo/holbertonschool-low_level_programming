@@ -27,7 +27,7 @@ void puts_half(char *str)
 
 	max = _strlen(str);
 	if (max % 2 != 0)
-		size = (max - 1) / 2;
+		size = (max + 1) / 2;
 	else
 		size = max / 2;
 	for (i = size; i < max; i++)
