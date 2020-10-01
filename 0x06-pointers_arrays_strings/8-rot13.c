@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
 * rot13 - rot13
 * @s: pointer
@@ -9,16 +10,19 @@ char *rot13(char *s)
 {
 	int i;
 	int j;
-
-	for (i = 0; s[i]; i++)
+	int b;
+	char c[50] = "abcDefghijklmnopqrstuvwxyz";
+	char c2[50] = "nopqrstuvwxyzabcdefghijklm";
+	
+	for(i = 0; s[i]; i++)
 	{
-		if (s[i] >= 'a' && s[i] <= 'z')
+		b = 0;
+		for (j = 0; c[j] && b == 0; j++)
 		{
-			for (j = 1; j <= 13; j++)
+			if (s[i] == c[j])
 			{
-				s[i] = s[i] + 1;
-				if (s[i] > 'z')
-					s[i] = 'a';
+				s[i] = c2[j];
+				b = 1;
 			}
 		}
 	}
