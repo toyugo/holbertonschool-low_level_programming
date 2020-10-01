@@ -11,10 +11,10 @@ char *rot13(char *s)
 	int i;
 	int j;
 	int b;
-	char c[50] = "abcDefghijklmnopqrstuvwxyz";
-	char c2[50] = "nopqrstuvwxyzabcdefghijklm";
-	
-	for(i = 0; s[i]; i++)
+	char c[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcDefghijklmnopqrstuvwxyz";
+	char c2[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
+	for (i = 0; s[i]; i++)
 	{
 		b = 0;
 		for (j = 0; c[j] && b == 0; j++)
