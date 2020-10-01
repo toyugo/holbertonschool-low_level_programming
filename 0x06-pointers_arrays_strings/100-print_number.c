@@ -1,26 +1,20 @@
 #include "holberton.h"
 /**
 * print_number - print_number
-* n: int
+* @n: int
 * Return: char
 */
 
 void print_number(int n)
 {
-	int nbpower;
-	unsigned int nb;
-	unsigned int nb1;
+	int nbpower = 1;
+	unsigned int nb = n;
+	unsigned int nb1 = n;
 
-	nb1 = n;
-	nb = n;
-	nbpower = 1;
-
-	if (n == 0)
-		_putchar('0');
 	if (n < 0)
 	{
-		nb1 = -n;
 		nb = -n;
+		nb1 = -n;
 		_putchar('-');
 	}
 	while (nb / 10 != 0)
@@ -28,11 +22,12 @@ void print_number(int n)
 		nb /= 10;
 		nbpower *= 10;
 	}
-	while (nb1 != 0)
+	nb = nb1;
+	while (nbpower > 0)
 	{
-		nb = nb1 / nbpower;
-		_putchar(nb + '0');
-		nb1 -= nb * nbpower;
+		nb1 = nb / nbpower;
+		_putchar(nb1  + '0');
+		nb = nb - nb1 * nbpower;
 		nbpower /= 10;
 	}
 }
