@@ -8,16 +8,10 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	int lens1;
-	int lens2;
 	int i;
 
-	for (i = 0; s1[i] != '\0'; i++)
+	for (i = 0; s1[i] == s2[i] && s1[i] && s2[i]; i++)
 	;
-	lens1 = i;
-	for (i = 0; s2[i] != '\0'; i++)
-	;
-	lens2 = i;
 
-	return (lens2 - lens1);
+	return (s2[i] - s1[i]);
 }
