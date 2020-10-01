@@ -1,8 +1,9 @@
+#include "holberton.h"
 /**
 * _strncat - _strncat
 * @dest: destination
 * @src: source
-* n: int
+* @n: int
 * Return: char
 */
 
@@ -14,11 +15,10 @@ char *_strncat(char *dest, char *src, int n)
 	for (i = 0; dest[i] != '\0'; i++)
 	;
 	j = 0;
-	for (; j < n && src[j]; j++)
+	for (; j < n; j++)
 	{
 		dest[i] = src[j];
 		i++;
 	}
-	dest[i] = '\0';
 	return (dest);
 }
