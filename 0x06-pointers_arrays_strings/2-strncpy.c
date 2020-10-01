@@ -4,7 +4,7 @@
 * _strncpy - _strncpy
 * @dest: destination
 * @src: source
-* n: int
+* @n: int
 * Return: char
 */
 
@@ -21,6 +21,6 @@ char *_strncpy(char *dest, char *src, int n)
 	for (j = 0; dest[j] != '\0'; j++)
 	;
 
-	dest[j + 1] = '\0';	
+	dest[j + 1] = '\0';
 	return (dest);
 }
