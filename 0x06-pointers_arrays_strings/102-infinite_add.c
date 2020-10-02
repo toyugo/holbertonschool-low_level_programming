@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include<stdio.h>
 /**
 * str_len - str_len
 * @s: string
@@ -65,7 +64,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	i = str_len(n1) - 1;
 	j = str_len(n2) - 1;
 	k = 0;
-
 	while (i >= 0 || j >= 0 || ret != 0)
 	{
 		tmpn1 = ctoint(n1[i]);
@@ -89,5 +87,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 	r[k] = '\0';
 	reverse_str(r);
+	i = str_len(r);
+	if (size_r <= i)
+		return ('\0');
 	return (r);
 }
