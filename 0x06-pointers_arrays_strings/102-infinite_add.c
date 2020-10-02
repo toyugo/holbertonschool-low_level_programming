@@ -17,6 +17,21 @@ int str_len(char *s)
 
 	return(i);
 }
+char *reverse_str(char *s)
+{
+	char tmp;
+	int size;
+	int i;
+	
+	size = str_len(s) - 1;
+	for (i = 0; i <= size / 2; i++)
+	{
+		tmp = s[i];
+		s[i] = s[size - i];
+		s[size -i] = tmp;
+	}
+	return (s);
+}
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int i;
@@ -53,6 +68,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		printf("k vault %i\n", k);
 	}
 	r[k] = '\0';
+	reverse_str(r);
 	printf("string de k vault : <%c>", r[0]);
 	printf("END \n");
 	return (r);
