@@ -10,8 +10,8 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int i;
-	int j;
+	int i = 0;
+	int j = 0;
 	int b = 0;
 	unsigned int res = 0;
 
@@ -27,10 +27,12 @@ unsigned int _strspn(char *s, char *accept)
 			}
 		}
 	}
-	for (j = 0; s[j]; j++)
-	;
-	if (accept[i] == s[j])
-		res += 1;
-
+	if (accept[i] == '\0')
+	{
+		for (j = 0; s[j]; j++)
+		;
+		if (s[j] == accept[i])
+			res += 1;
+	}
 	return (res);
 }
