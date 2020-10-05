@@ -5,7 +5,7 @@
 * _memset - _memset
 * @s: string
 * @b: char
-* @c unsigned int
+* @n unsigned int
 * Return: string
 */
 
