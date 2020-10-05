@@ -12,27 +12,24 @@ unsigned int _strspn(char *s, char *accept)
 {
 	int i = 0;
 	int j = 0;
-	int b = 0;
-	unsigned int res = 0;
+	int b = 1;
+	int b1;
 
-	for (i = 0; accept[i]; i++)
+	for (i = 0; b == 1 ; i++)
 	{
+		b1 = 0;
 		b = 0;
-		for (j = 0; s[j] && b == 0; j++)
+		for (j = 0; accept[j] && b1 == 0; j++)
 		{
-			if (s[j] == accept[i])
+			if (accept[j] == s[i])
 			{
-				res += 1;
 				b = 1;
+				b1 = 1;
 			}
+
 		}
 	}
-	if (accept[i] == '\0')
-	{
-		for (j = 0; s[j]; j++)
-		;
-		if (s[j] == accept[i])
-			res += 1;
-	}
-	return (res);
+	if (i != 0)
+		i -= 1;
+	return (i);
 }
