@@ -18,8 +18,7 @@ char *_strpbrk(char *s, char *accept)
 	for (i = 0; s[i] && b1 == 0; i++)
 	{
 		b  = 0;
-		printf("%i\n", i);
-		for (j = 0; accept[j] && b == 0; j++)
+		for(j = 0; accept[j] && b == 0; j++)
 		{
 			if (accept[j] == s[i])
 			{
@@ -30,5 +29,8 @@ char *_strpbrk(char *s, char *accept)
 	}
 	if (i > 0)
 		i -= 1;
-	return (&s[i]);
+	if (b1 == 0)
+		return (NULL);
+	else
+		return (&s[i]);
 }
