@@ -36,6 +36,8 @@ int pal(char *s, char *f)
 
 int is_palindrome(char *s)
 {
+	if (s[0] == 0)
+		return (1);
 	return (pal(s, s + _strlen(s) - 1));
 }
 
