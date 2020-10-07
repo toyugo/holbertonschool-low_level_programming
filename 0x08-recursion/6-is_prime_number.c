@@ -11,9 +11,9 @@
 int checkprime(int n, int val)
 {
 	if (n == val)
-		return (0);
-	else if (val % n == 0)
 		return (1);
+	else if (val % n == 0)
+		return (0);
 	return (checkprime(n + 1, val));
 }
 
@@ -25,6 +25,9 @@ int checkprime(int n, int val)
 
 int is_prime_number(int n)
 {
+
+	if (n == 1 || n <= 0)
+		return (0);
 	return (checkprime(2, n));
 }
 
