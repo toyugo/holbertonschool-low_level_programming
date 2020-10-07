@@ -24,5 +24,6 @@ int recurs(int n, int checkvalue)
 
 int _sqrt_recursion(int n)
 {
-	return (recurs(n, n));
+	if (n < 0)
+		return (recurs(n, n));
 }
