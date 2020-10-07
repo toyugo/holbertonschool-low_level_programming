@@ -9,11 +9,11 @@
  */
 int recurs(int n, int checkvalue)
 {
-	if (n <= 0)
+	if (n <= 0 || n * n > checkvalue)
 		return (-1);
 	if (n * n == checkvalue)
 		return (n);
-	return (recurs(n - 1, checkvalue));
+	return (recurs(n + 1, checkvalue));
 }
 
 /**
@@ -26,5 +26,5 @@ int _sqrt_recursion(int n)
 {
 	if (n == 0)
 		return (0);
-	return (recurs(n, n));
+	return (recurs(1, n));
 }
