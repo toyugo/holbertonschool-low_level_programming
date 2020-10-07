@@ -21,7 +21,7 @@ int _strlen(char *s)
  */
 int pal(char *s, char *f)
 {
-	if (s[0] == f[0])
+	if (s[0] == f[0] && s[0] != '\0' && f[0] != '\0')
 		return (1);
 	else
 		return (0);
@@ -38,4 +38,3 @@ int is_palindrome(char *s)
 {
 	return (pal(s, s + _strlen(s) - 1));
 }
-
