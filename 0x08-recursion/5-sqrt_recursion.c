@@ -9,9 +9,6 @@
  */
 int recurs(int n, int checkvalue)
 {
-	int res = 1;
-	int sqrt;
-
 	if (n <= 0)
 		return (-1);
 	if (n * n == checkvalue)
