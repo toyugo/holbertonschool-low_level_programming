@@ -16,16 +16,17 @@ int _strlen(char *s)
 /**
  * pal - pal
  * @s: string order
- * @f: string reverse order
+ * @i: integer
+ * @n: constant str len
  * Return: pal
  */
-int pal(char *s, char *f)
+int pal(char *s, int i, int n)
 {
-	if (s[0] == f[0])
+	if (i > n / 2)
 		return (1);
-	else
-		return (0);
-	pal(s + 1, f - 1);
+	if (s[i] == s[n - 1 - i])
+		return (pal(s, i +  1, n));
+	return (0);
 }
 
 /**
@@ -36,5 +37,5 @@ int pal(char *s, char *f)
 
 int is_palindrome(char *s)
 {
-	return (pal(s, s + _strlen(s) - 1));
+	return (pal(s, 0, _strlen(s)));
 }
