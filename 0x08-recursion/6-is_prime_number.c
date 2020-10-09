@@ -2,32 +2,36 @@
 #include <stdio.h>
 
 /**
- * checkprime - checkprime
- * @n: int
- * @val: int
- * Return: int
+ * prime - prime
+ * @n: constant
+ * @i: i recursive loop
+ * Return: 1 prime, 0 no prime
  */
-
-int checkprime(int n, int val)
+int prime(int n, int i)
 {
-	if (n == val)
+	if (i == n)
+	{
 		return (1);
-	else if (val % n == 0)
-		return (0);
-	return (checkprime(n + 1, val));
+	}
+	else
+	{
+		if (i * i == n)
+			return (0);
+		return (prime(n, i + 1));
+	}
 }
 
 /**
  * is_prime_number - is_prime_number
- * @n: int
- * Return: int
+ * @n: Number;
+ *  Return: 1 prime, 0 no prime
  */
 
 int is_prime_number(int n)
 {
-
-	if (n == 1 || n <= 0)
+	if (n < 0)
 		return (0);
-	return (checkprime(2, n));
+	if (n == 1)
+		return (0);
+	return (prime(n, 2));
 }
-
