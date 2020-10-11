@@ -4,8 +4,8 @@
 /**
  * main - main
  * @argc: argc
- * @argv: argv
- * Return: 0
+ * @argv: argvi
+ * Return: return 0
  */
 
 int main(int argc, char *argv[])
