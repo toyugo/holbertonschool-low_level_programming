@@ -1,4 +1,6 @@
 #include <stdlib.h>
+#include <stdio.h>
+
 /**
  * main - main
  * @argc: argc
