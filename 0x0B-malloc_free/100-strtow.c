@@ -39,18 +39,16 @@ int _nbword(char *s)
 {
 	int i;
 	int k;
+	int j;
 
 	i = 0;
 	k = 0;
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 	{
-		if (_ischar(str[i]) == 1)
+		if (_ischar(s[i]) == 1)
 		{
-			len = _strlen(str, i);
-			for (j = 0; _ischar(str[i]) == 1; j++)
-			{
+			for (j = 0; _ischar(s[i]) == 1; j++)
 				i++;
-			}
 			k++;
 		}
 		else
@@ -74,6 +72,8 @@ char **strtow(char *str)
 
 	/*Detect nb word to alloc*/
 	ar = malloc(_nbword(str) * sizeof(char));
+	if (ar == NULL)
+		return (NULL);
 	/*Loop to string*/
 	i = 0;
 	k = 0;
@@ -85,7 +85,7 @@ char **strtow(char *str)
 			/*Alloc len de words*/ /*comment utiliser seulemt _strlen(str)*/
 			/* Detect size string */
 			len = _strlen(str, i);
-			ar[k] = malloc((len + 1) * sizeof(char));
+			ar[k] = malloc((len + 1 + 1) * sizeof(char));
 			/*Loop to add each char in tab + add '\0' end*/
 			for (j = 0; _ischar(str[i]) == 1; j++)
 			{
