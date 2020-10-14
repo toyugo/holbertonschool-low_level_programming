@@ -101,6 +101,7 @@ char **strtow(char *str)
 		}
 		else
 			i++;
+		ar[k] = NULL;
 	}
 	return (ar);
 }
