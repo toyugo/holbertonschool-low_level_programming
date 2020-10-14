@@ -96,12 +96,12 @@ char **strtow(char *str)
 				ar[k][j] = str[i];
 				i++;
 			}
-			ar[k][j] = '\0';
+			ar[k][j] = '\0'; /*Seems to work*/
 			k++;
 		}
 		else
 			i++;
-		ar[k] = NULL;/*Not necessary*/
+		ar[k] = NULL;/*Seems to work*/
 	}
 	return (ar);
 }
