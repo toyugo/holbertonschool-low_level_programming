@@ -71,7 +71,10 @@ char **strtow(char *str)
 	int len;
 
 	/*Detect nb word to alloc*/
+	if (_nbword(str) == 0)
+		return (0);
 	ar = malloc((_nbword(str) + 1) * sizeof(char *));
+	printf("%i\n", _nbword(str));
 	if (ar == NULL)
 		return (NULL);
 	/*Loop to string*/
