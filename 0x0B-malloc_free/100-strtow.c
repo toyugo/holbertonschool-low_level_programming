@@ -9,10 +9,19 @@
  */
 int _ischar(char c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	if ((c >= '!' && c <= '~'))
 		return (1);
 	else
 		return (0);
+}
+
+int _strlen(char *s, int j)
+{
+	int i;
+
+	for (i = j; s[i] != '\0' &&  s[i] != ' '; i++)
+	;
+	return (i - j);
 }
 
 /**
@@ -25,29 +34,40 @@ char **strtow(char *str)
 {
 	char **ar;
 	int i;
-	int k = 0;
-	int j = 0;
+	int j;
+	int k;
+	int len;
 	
+	/*To Alloc*/
+	/*Detect word number*/
 	ar = malloc(1000 * sizeof(char));
-	for (i = 0; i < 10; i++)
-		ar[i] = malloc(1000 * sizeof(char));
-	/*nb words*/
-	for (i = 0; str[i] != '\0'; i++)
+		/*Alloc main ar*/
+
+	/*Loop to string*/
+	i = 0;
+	k = 0;
+	while (str[i] != '\0')
 	{
-		for (; str[i] == ' ' && str[i] != '\0'; i++)
+		//printf("check str[i] = %c pour i = %i\n",str[i], i);
+		/*Detect string start*/
+		if(_ischar(str[i]) == 1)
 		{
-//			printf("[blank] vault : %c pour i vault = %i\n", str[i], i);
-		}
-		for (;_ischar(str[i]);i++)
+			/*Alloc len de words*/ /*comment utiliser seulemt _strlen(str)*/
+			//printf("str[i] = %c, pour i vault %i test strlen %i\n",str[i],i , _strlen(str, i));
+			/* Detect size string */
+			len = _strlen(str, i);
+			ar[k] = malloc((len + 1) * sizeof(char));
+			/*Loop to add each char in tab + add '\0' end*/
+			for (j = 0; _ischar(str[i]) == 1; j++)
 			{
-				printf("[add char] str vault : %c pour i vault = %i\n", str[i], i);
-				ar[j][k] = str[i];
-				k++;
+				ar[k][j] = str[i];
+				i++;
 			}
-		ar[j][k] = '\0';
-		k++;
-		printf("pour j = %i string vault %s\n",j, ar[j]);
-		j++;
+			k++;
+		}
+		else
+			i++;
+		/**/
 	}
 	return (ar);
 }
