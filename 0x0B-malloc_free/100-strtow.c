@@ -74,7 +74,6 @@ char **strtow(char *str)
 	if (str == NULL)
 		return (NULL);
 	ar = malloc((_nbword(str) + 1) * sizeof(char *));
-	printf("%i\n", _nbword(str));
 	if (ar == NULL)
 		return (NULL);
 	/*Loop to string*/
