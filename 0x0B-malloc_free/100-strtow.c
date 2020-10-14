@@ -3,9 +3,9 @@
 #include <stdlib.h>
 
 /**
- *
- *
- *
+ * _ischar - _ischar
+ * @c : char c
+ * Return: 1 else 0
  */
 int _ischar(char c)
 {
@@ -15,15 +15,49 @@ int _ischar(char c)
 		return (0);
 }
 
+/**
+ * _strlen - _strlen
+ * @s: string
+ * @j: start pos
+ * Return: size of a word depending of start pos
+ */
 int _strlen(char *s, int j)
 {
 	int i;
 
 	for (i = j; s[i] != '\0' &&  s[i] != ' '; i++)
-	;
+		;
 	return (i - j);
 }
 
+/**
+ * _nbword - _nbword
+ * @s: string
+ * Return: number of words
+ */
+int _nbword(char *s)
+{
+	int i;
+	int k;
+
+	i = 0;
+	k = 0;
+	while (str[i] != '\0')
+	{
+		if (_ischar(str[i]) == 1)
+		{
+			len = _strlen(str, i);
+			for (j = 0; _ischar(str[i]) == 1; j++)
+			{
+				i++;
+			}
+			k++;
+		}
+		else
+			i++;
+	}
+	return (k);
+}
 /**
  * strtow - strtow
  * @str: char
@@ -37,23 +71,18 @@ char **strtow(char *str)
 	int j;
 	int k;
 	int len;
-	
-	/*To Alloc*/
-	/*Detect word number*/
-	ar = malloc(1000 * sizeof(char));
-		/*Alloc main ar*/
 
+	/*Detect nb word to alloc*/
+	ar = malloc(_nbword(str) * sizeof(char));
 	/*Loop to string*/
 	i = 0;
 	k = 0;
 	while (str[i] != '\0')
 	{
-		//printf("check str[i] = %c pour i = %i\n",str[i], i);
 		/*Detect string start*/
-		if(_ischar(str[i]) == 1)
+		if (_ischar(str[i]) == 1)
 		{
 			/*Alloc len de words*/ /*comment utiliser seulemt _strlen(str)*/
-			//printf("str[i] = %c, pour i vault %i test strlen %i\n",str[i],i , _strlen(str, i));
 			/* Detect size string */
 			len = _strlen(str, i);
 			ar[k] = malloc((len + 1) * sizeof(char));
@@ -67,7 +96,6 @@ char **strtow(char *str)
 		}
 		else
 			i++;
-		/**/
 	}
 	return (ar);
 }
