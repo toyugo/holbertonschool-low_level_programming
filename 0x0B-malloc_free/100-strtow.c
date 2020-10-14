@@ -71,7 +71,7 @@ char **strtow(char *str)
 	int len;
 
 	/*Detect nb word to alloc*/
-	ar = malloc(_nbword(str) * sizeof(char));
+	ar = malloc((_nbword(str) + 1) * sizeof(char *));
 	if (ar == NULL)
 		return (NULL);
 	/*Loop to string*/
@@ -85,7 +85,7 @@ char **strtow(char *str)
 			/*Alloc len de words*/ /*comment utiliser seulemt _strlen(str)*/
 			/* Detect size string */
 			len = _strlen(str, i);
-			ar[k] = malloc((len + 1 + 1) * sizeof(char));
+			ar[k] = malloc((len + 1) * sizeof(char));
 			/*Loop to add each char in tab + add '\0' end*/
 			for (j = 0; _ischar(str[i]) == 1; j++)
 			{
