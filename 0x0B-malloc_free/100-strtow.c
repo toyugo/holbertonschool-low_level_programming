@@ -71,7 +71,7 @@ char **strtow(char *str)
 	int len;
 
 	/*Detect nb word to alloc*/
-	if (str[0] == NULL)
+	if (str == NULL)
 		return (NULL);
 	if (_nbword(str) == 0)
 		return (NULL);
