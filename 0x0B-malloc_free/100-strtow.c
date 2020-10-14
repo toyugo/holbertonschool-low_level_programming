@@ -96,6 +96,7 @@ char **strtow(char *str)
 				ar[k][j] = str[i];
 				i++;
 			}
+			ar[k][j] = '\0';
 			k++;
 		}
 		else
