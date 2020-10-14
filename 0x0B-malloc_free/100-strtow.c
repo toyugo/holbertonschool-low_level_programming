@@ -73,6 +73,8 @@ char **strtow(char *str)
 	/*Detect nb word to alloc*/
 	if (str == NULL)
 		return (NULL);
+	if (_nbword(str) == 0)
+		return (NULL);
 	ar = malloc((_nbword(str) + 1) * sizeof(char *));
 	if (ar == NULL)
 		return (NULL);
