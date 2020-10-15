@@ -8,7 +8,7 @@
  */
 
 void *malloc_checked(unsigned int b)
-{	
+{
 	unsigned long long *c;
 
 	c = malloc(b);
