@@ -28,6 +28,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *s3;
 	unsigned int i;
+	unsigned int j;
 	unsigned int len;
 
 	len = _strlen(s2);
