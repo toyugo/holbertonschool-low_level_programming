@@ -28,13 +28,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *s3;
 	unsigned int i;
-	int j;
+	int j, k;
 
-	if (s1 == "\0")
+	k = n;
+
+	if (s1 == '\0')
 		s1 = "";
-	if (s2 == "\0")
+	if (s2 == '\0')
 		s2 = "";
-	if (n >= _strlen(s2))
+	if (k >= _strlen(s2))
 	{
 		s3 = malloc(sizeof(s3) * (_strlen(s1) + _strlen(s2) + 1));
 		for (i = 0; s1[i] != '\0'; i++)
