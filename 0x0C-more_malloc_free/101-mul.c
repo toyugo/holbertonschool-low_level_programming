@@ -13,7 +13,7 @@ int _strlen(char *str)
  * Multiplier un chiffre n1 par une infinite de chiffre le resultat sous char et decalle de dec ( max long int)
  */ 
 
-char *Multiplication(char *res, char *n1, char *n2, long int dec)
+char *Multiplication(char *res, char n1, char *n2, long int dec)
 {
 	/*n2 le plus a droite)*/
 	int ret = 0;
@@ -23,7 +23,7 @@ char *Multiplication(char *res, char *n1, char *n2, long int dec)
 	int j = 0; /* compteur de res */
 	for (i = _strlen(n2) - 1; i >= 0; i--)
 	{
-		restp = ((n1[0] - '0') * (n2[i] - '0')) + ret;
+		restp = ((n1 - '0') * (n2[i] - '0')) + ret;
 		if (ret > 0)
 			ret = 0;
 		//printf("j = %d, restp FULL  = %d\n",j, restp);
@@ -66,12 +66,19 @@ char *Multiplication(char *res, char *n1, char *n2, long int dec)
 int main(int ac, char *av[])
 {
 	char *ar;
+	char nb;
+	int i,j,k;
 
 	ar = malloc(100 * sizeof(char));
 	if (ar == NULL)
 		return (0);
-	Multiplication (ar, "2", "1259", 3);
-	printf("[main res] %s\n ", ar);
+	k = 0;
+	for (i = _strlen(av[1]) - 1; i >= 0; i--)
+	{
+		printf("AV1i vault %c and av2 i vault  %s\n",av[1][i], av[2]);
+		Multiplication(ar, av[1][i], av[2], k);
+		printf("[main res] %s\n ", ar);
+	}
 	free (ar);
 	return (0);
 }
