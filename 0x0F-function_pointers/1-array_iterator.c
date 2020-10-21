@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include "holberton.h"
+#include "function_pointers.h"
 /**
  * array_iterator - array_iterator
  * @array: int
@@ -10,7 +9,7 @@
 
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	int i;
+	unsigned int i;
 
 	if (action == NULL || array == NULL)
 		return;
