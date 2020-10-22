@@ -1,9 +1,9 @@
-#include "function_pointers.h"
+#include "3-calc.h"
 
 /**
- *get_op_func - function getopfunc with chars m 
- *@s: string
- *Return: pointer to the function needed
+ * get_op_func - get function depending on sign pass in *s
+ * @s: char
+ * Return: ops function
  */
 
 int (*get_op_func(char *s))(int, int)
@@ -18,4 +18,12 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int i;
 
+	i = 0;
+	while (ops[i].op != NULL)
+	{
+		if (s[0] == ops[i].op[0])
+			return (ops[i].f);
+		i++;
+	}
+	return (NULL);
 }
