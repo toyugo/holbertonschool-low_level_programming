@@ -6,4 +6,16 @@ int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
+
+/**
+ * struct s_format - structure for print function
+ * @type: type;
+ * @fuprint: structure to print function
+ */
+struct s_format
+{
+	char type;
+	void (*fuprint)(va_list);
+};
+typedef struct s_format s_format;
 #endif
