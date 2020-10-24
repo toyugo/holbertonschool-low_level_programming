@@ -2,45 +2,56 @@
 
 /**
  * print_char - print_char
+ * @separator: separateur
  * @va: valist
  * Return: void
  */
 
 void print_char(const char *separator, va_list va)
 {
-	printf("%c%s", va_arg(va, int), separator);
+	printf("%s%c", separator, va_arg(va, int));
 }
 
 /**
- * print_string - print_string
+ * print_str - print_str
+ * @separator: separateur
  * @va: valist
  * Return: void
  */
 
 void print_str(const char *separator, va_list va)
 {
-	printf("%s%s", va_arg(va, char *), separator);
+	char *s;
+
+	s = va_arg(va, char *);
+	if (s == NULL)
+	{
+		s = "(nil)";
+	}
+	printf("%s%s", separator, s);
 }
 
 /**
  * print_integer - print_integer
+ * @separator: separateur
  * @va: valist
  * Return: void
  */
 
 void print_integer(const char *separator, va_list va)
 {
-	printf("%i%s", va_arg(va, int), separator);
+	printf("%s%i", separator, va_arg(va, int));
 }
 /**
  * print_float - print_float
+ * @separator: separateur
  * @va: valist
  * Return: void
  */
 
 void print_float(const char *separator, va_list va)
 {
-	printf("%f%s", va_arg(va, double), separator);
+	printf("%s%f", separator, va_arg(va, double));
 }
 /**
  * print_all - print_all
@@ -61,25 +72,26 @@ void print_all(const char * const format, ...)
 	};
 	int i;
 	int j;
-	int b;
 
 	va_start(va, format);
 	i = 0;
 	/*parcourt le format */
-	while (format[i])
+	/* format = "ceis" */
+	while (format && format[i])
 	{
 		j = 0;
 		/*parcourt la structure*/
 		while (tab[j].type)
 		{
-			if (tab[j+1].type != NULL)
-				separator = ", ";
-			if (format[i] == tab[j].type)
-				/*launch associated format */
+			if (format[i] == (*tab[j].type))
+			/*launch associated format */
+			{
 				tab[j].fuprint(separator, va);
+				separator = ", ";
 			}
-		j++;
+			j++;
 		}
+		i++;
 	}
 	printf("\n");
 	va_end(va);
