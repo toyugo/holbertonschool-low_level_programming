@@ -15,7 +15,7 @@ void print_all(const char * const format, ...);
 struct s_format
 {
 	char type;
-	void (*fuprint)(va_list);
+	void (*fuprint)(char *, va_list);
 };
 typedef struct s_format s_format;
 #endif

@@ -51,13 +51,13 @@ void print_float(const char *separator, va_list va)
 void print_all(const char * const format, ...)
 {
 	va_list va;
-	char *separator;
+	char *separator = "";
 	s_format tab[] = {
-		{'c', print_char},
-		{'i', print_integer},
-		{'f', print_float},
-		{'s', print_str},
-		{'\0', NULL}
+		{"c", print_char},
+		{"i", print_integer},
+		{"f", print_float},
+		{"s", print_str},
+		{NULL, NULL}
 	};
 	int i;
 	int j;
@@ -72,12 +72,11 @@ void print_all(const char * const format, ...)
 		/*parcourt la structure*/
 		while (tab[j].type)
 		{
-			separator = "";
-			if (tab[j+1].type != '\0')
+			if (tab[j+1].type != NULL)
 				separator = ", ";
 			if (format[i] == tab[j].type)
 				/*launch associated format */
-				tab[j].fuprint(va, separator);
+				tab[j].fuprint(separator, va);
 			}
 		j++;
 		}
