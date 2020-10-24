@@ -6,9 +6,9 @@
  * Return: void
  */
 
-void print_char(va_list va)
+void print_char(const char *separator, va_list va)
 {
-	printf("%c", va_arg(va, int));
+	printf("%c%s", va_arg(va, int), separator);
 }
 
 /**
@@ -17,15 +17,9 @@ void print_char(va_list va)
  * Return: void
  */
 
-void print_string(va_list va)
+void print_str(const char *separator, va_list va)
 {
-	char *s;
-
-	s = va_arg(va, char*);
-	if (s == NULL)
-		printf("nil");
-	else
-		printf("%s", s);
+	printf("%s%s", va_arg(va, char *), separator);
 }
 
 /**
@@ -34,9 +28,9 @@ void print_string(va_list va)
  * Return: void
  */
 
-void print_integer(va_list va)
+void print_integer(const char *separator, va_list va)
 {
-	printf("%i", va_arg(va, int));
+	printf("%i%s", va_arg(va, int), separator);
 }
 /**
  * print_float - print_float
@@ -44,9 +38,9 @@ void print_integer(va_list va)
  * Return: void
  */
 
-void print_float(va_list va)
+void print_float(const char *separator, va_list va)
 {
-	printf("%f", va_arg(va, double));
+	printf("%f%s", va_arg(va, double), separator);
 }
 /**
  * print_all - print_all
@@ -57,11 +51,12 @@ void print_float(va_list va)
 void print_all(const char * const format, ...)
 {
 	va_list va;
+	char *separator;
 	s_format tab[] = {
 		{'c', print_char},
 		{'i', print_integer},
 		{'f', print_float},
-		{'s', print_string},
+		{'s', print_str},
 		{'\0', NULL}
 	};
 	int i;
@@ -75,32 +70,18 @@ void print_all(const char * const format, ...)
 	{
 		j = 0;
 		/*parcourt la structure*/
-		b = 0;
 		while (tab[j].type)
 		{
+			separator = "";
+			if (tab[j+1].type != '\0')
+				separator = ", ";
 			if (format[i] == tab[j].type)
 				/*launch associated format */
-				tab[j].fuprint(va);
-				b = 1;
+				tab[j].fuprint(va, separator);
 			}
 		j++;
 		}
-		if (format[i + 1] == '\0')
-			printf("\n");
-		else if (b == 1)
-			printf(", ");
-		i++;
 	}
+	printf("\n");
 	va_end(va);
-}
-
-/**
- * main - main
- * Return: 0
- */
-
-int main(void)
-{
-	print_all("ceis", 'H', 0, "holbert");
-	return (0);
 }
