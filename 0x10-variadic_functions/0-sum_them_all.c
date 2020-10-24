@@ -10,7 +10,6 @@ int sum_them_all(const unsigned int n, ...)
 {
 	unsigned int sum;
 	unsigned int i;
-	unsigned int tps;
 	va_list a_list;
 
 	if (n == 0)
