@@ -18,8 +18,11 @@ list_t *add_node_end(list_t **head, const char *str)
 	tmp = strdup(str);
 	if (str == NULL || new == NULL)
 		return (NULL);
-	for (i = 0; tmp[i] ; i++)
-	;
+	if (tmp != NULL)
+	{
+		for (i = 0; tmp[i] ; i++)
+		;
+	}
 	len = i;
 	new->next = NULL;
 	new->str = tmp;
