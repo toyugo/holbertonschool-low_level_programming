@@ -19,7 +19,7 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	if (str != NULL)
 	{
-		for (i = 0; str[i] != '\0'i; i++)
+		for (i = 0; str[i] != '\0'; i++)
 		;
 	}
 	new->str = tmp;
