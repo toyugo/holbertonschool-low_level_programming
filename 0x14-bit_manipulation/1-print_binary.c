@@ -47,7 +47,7 @@ unsigned long int power2(unsigned long int n)
 void print_binary(unsigned long int n)
 {
 	unsigned long int lb;
-	unsigned int i;
+	unsigned long int i;
 
 	if (n == 0)
 		putchar('0');
