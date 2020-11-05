@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include "holberton.h"
 
+
+/**
+ * power2max - power2max
+ * @n: unsigned
+ * Return: unsigned
+ */
 unsigned long int power2max(unsigned long int n)
 {
 	unsigned long int i;
@@ -16,56 +22,48 @@ unsigned long int power2max(unsigned long int n)
 	return (cp);
 }
 
+/**
+ * power2 - power2
+ * @n: unsigned
+ * Return: unsigned
+ */
 unsigned long int power2(unsigned long int n)
 {
 	unsigned long int res;
+
 	if (n == 0)
 		return (1);
-	
 	n = n - 1;
 	res = 2 << n;
 
 	return (res);
 }
+
 /**
  * print_binary - print_binary
  * @n: unsigned
  * Return: unsigned
  */
-
 void print_binary(unsigned long int n)
 {
+	unsigned long int lb;
 	unsigned long int i;
-	unsigned long int t0;
 
-	t0 = 0;
-	t0 += power2max(n);
-	if( n == 0)
+	if (n == 0)
+		putchar('0');
+	else
 	{
-		_putchar('0');
-		return;
-	}
-	if (n == 1)
-	{
-		_putchar('1');
-		return;
-	}
-	while (t0 > 0)
-	{
-		//printf("t0 = %lu\npowermax(n) = %lu\n", t0, power2max(n));
-		if (power2max(n) == t0)
+		i = power2max(n);
+		while (i > 0)
 		{
+			lb = n >> i;
+			if (lb & 1)
+				_putchar('1');
+			else
+				_putchar('0');
+			i--;
+		}
+		if (i == 0)
 			_putchar('1');
-		//	printf("power2 vault %lu n = %lu\n", power2(t0), n);
-			n -= power2(t0);
-		}
-		else
-		{
-			_putchar('0');
-		}
-		if (n == 0)
-			_putchar('0');
-		t0 = t0 - 1;
-		//printf("After t0 = %lu\n", t0);
 	}
 }
