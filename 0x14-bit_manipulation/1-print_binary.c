@@ -47,14 +47,14 @@ unsigned long int power2(unsigned long int n)
 void print_binary(unsigned long int n)
 {
 	unsigned long int lb;
-	unsigned long int i;
+	int i;
 
 	if (n == 0)
 		putchar('0');
 	else
 	{
 		i = power2max(n);
-		while (i > 0)
+		while (i >= 0)
 		{
 			lb = n >> i;
 			if (lb & 1)
@@ -63,7 +63,5 @@ void print_binary(unsigned long int n)
 				_putchar('0');
 			i--;
 		}
-		if (i == 0)
-			_putchar('1');
 	}
 }
