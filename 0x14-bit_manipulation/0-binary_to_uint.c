@@ -10,7 +10,7 @@
 
 unsigned int power(unsigned int nb, unsigned int pow)
 {
-	int i;
+	unsigned int i;
 	unsigned int res;
 
 	res = nb;
