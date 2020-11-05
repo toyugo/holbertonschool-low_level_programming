@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -12,10 +11,11 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned long int lb;
 
+	if (index > 63)
+		return (-1);
 	lb = (n >> index);
 	if (lb & 1)
 		return (1);
 	else
 		return (0);
-	return (-1);
 }
