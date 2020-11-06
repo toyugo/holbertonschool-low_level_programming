@@ -14,7 +14,7 @@ unsigned long int power2max(unsigned long int n)
 
 	cp = 0;
 	i = 1;
-	while ((n >> i) != 0)
+	while (((n >> i ) != 0) && (i < 64))
 	{
 		i++;
 		cp++;
@@ -72,4 +72,12 @@ void print_binary(unsigned long int n)
 				_putchar('0');
 		}
 	}
+}
+
+int main(void)
+{
+	unsigned long int u;
+	u = -1;
+	print_binary(-1);
+	return (0);
 }
