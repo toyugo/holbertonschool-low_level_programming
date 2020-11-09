@@ -37,15 +37,15 @@ int main(int ac, char **av)
 	}
 	e = close(fd_from);
 	e1 = close(fd_in);
-	if (e == -1)
+	if (e1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd_in);
 		exit(100);
 	}
-	if (e1 == -1)
+	if (e2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd_from);
 		exit(100);
 	}
-	return (1);
+	return (0);
 }
