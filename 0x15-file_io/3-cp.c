@@ -28,11 +28,8 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
-	/*lire fichier et stocker dans buffer*/
-	printf("PRINT in \n");
 	while ((nb = read(fd_from, buf, 1024)) != 0)
 	{
-		printf("PRINT in %lu\n", nb);
 		write(fd_in, buf, nb);
 	}
 	e = close(fd_from);
