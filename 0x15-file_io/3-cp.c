@@ -1,6 +1,5 @@
 #include "holberton.h"
 
-
 /**
  * main - Entry point
  * @ac: number of argument
