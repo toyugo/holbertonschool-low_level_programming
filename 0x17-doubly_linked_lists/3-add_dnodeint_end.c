@@ -14,7 +14,10 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	if (new == NULL)
 		return (NULL);
 	if (*head == NULL)
+	{
 		*head = new;
+		return (new);
+	}
 	else
 	{
 		ptr = *head;
