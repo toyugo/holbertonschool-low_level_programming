@@ -22,6 +22,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		cp++;
 	}
 	ptrm->next = ptr->next;
+	ptr->next = ptrm;
 	free(ptr);
 	return (1);
 }
