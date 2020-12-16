@@ -22,7 +22,7 @@ int get_max_node(dlistint_t **h)
  * @h: pointer to head of list
  * @idx: pointer to head of list
  * Return: number of nodes
- */  
+ */
 dlistint_t *goToIndex(dlistint_t **h, unsigned int idx)
 {
 	dlistint_t *ptr;
@@ -50,7 +50,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	dlistint_t *ptr;
 	dlistint_t *ptrP;
 	unsigned int indexmax;
-	
+
 	ptr = *head;
 	indexmax = get_max_node(head);
 	if (index > indexmax || ptr == NULL)
@@ -64,6 +64,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		*head = ptrP;
 	if (ptrP != NULL)
 		ptrP->prev = ptrM;
+	free(ptr);
 	return (0);
 }
 
