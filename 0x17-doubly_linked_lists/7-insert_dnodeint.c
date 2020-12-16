@@ -48,10 +48,8 @@ dlistint_t *goToIndex(dlistint_t **h, unsigned int idx)
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *ptr;
-	dlistint_t *ptrM;
+	dlistint_t *ptr, *ptrM, *new;
 	unsigned int indexmax;
-	dlistint_t *new;
 
 	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
@@ -60,7 +58,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	ptr = *h;
 	indexmax = get_max_node(h);
 	if (idx > indexmax)
-		return (NULL);	
+		return (NULL);
 	if (idx == 0)
 	{
 		ptr = goToIndex(h, idx);
@@ -74,7 +72,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		ptr = goToIndex(h, idx);
 		ptrM = goToIndex(h, idx - 1);
-		/*if (ptrM != NULL)*/
+		if (ptrM != NULL)
 			ptrM->next = new;
 		new->prev = ptr;
 		new->next = NULL;
