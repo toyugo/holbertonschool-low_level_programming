@@ -29,6 +29,8 @@ dlistint_t *goToIndex(dlistint_t **h, unsigned int idx)
 	unsigned int cp = 0;
 
 	ptr = *h;
+	if (ptr == NULL)
+		return (NULL);
 	while (cp < idx)
 	{
 		ptr = ptr->next;
@@ -58,21 +60,24 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	ptr = *h;
 	indexmax = get_max_node(h);
 	if (idx > indexmax)
-		return (NULL);
-	if (idx == indexmax)
+		return (NULL);	
+	if (idx == 0)
 	{
 		ptr = goToIndex(h, idx);
-		ptrM = goToIndex(h, idx - 1);
-		ptrM->next = new;
-		new->prev = ptr;
-		new->next = NULL;
-	}
-	else if (idx == 0)
-	{
 		ptr = goToIndex(h, idx);
+		*h = new;
 		*h = new;
 		new->prev = NULL;
 		new->next = ptr;
+	}
+	else if (idx == indexmax)
+	{
+		ptr = goToIndex(h, idx);
+		ptrM = goToIndex(h, idx - 1);
+		/*if (ptrM != NULL)*/
+			ptrM->next = new;
+		new->prev = ptr;
+		new->next = NULL;
 	}
 	else
 	{
