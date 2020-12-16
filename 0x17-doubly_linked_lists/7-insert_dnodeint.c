@@ -1,5 +1,43 @@
 #include "lists.h"
 /**
+ * get_max_node - get_max_node
+ * @h: pointer to head of list
+ * Return: number of nodes
+ */
+
+int get_max_node(dlistint_t **h)
+{
+	dlistint_t *ptr = *h;
+	unsigned int i = 0;
+
+	while (ptr)
+	{
+		ptr = ptr->next;
+		i++;
+	}
+	return (i);
+}
+/**
+ * goToIndex - goToIndex
+ * @h: pointer to head of list
+ * @idx: pointer to head of list
+ * Return: number of nodes
+ */
+dlistint_t *goToIndex(dlistint_t **h, unsigned int idx)
+{
+	dlistint_t *ptr;
+	unsigned int cp = 0;
+
+	ptr = *h;
+	while (cp < idx)
+	{
+		ptr = ptr->next;
+		cp++;
+	}
+	return (ptr);
+}
+
+/**
  * insert_dnodeint_at_index - insert_dnodeint_at_index
  * @h: head
  * @idx: index
@@ -8,34 +46,34 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new;
+	dlistint_t *ptrM;
 	dlistint_t *ptr;
-	dlistint_t *ptrm;
-	unsigned int cp = 1;
+	unsigned int indexmax;
+	dlistint_t *new;
 
-	if (idx == 0)
-		return (add_dnodeint(h, n));
-	ptrm = *h;
-	ptr = *h;
-	ptr = ptr->next;
-	while (cp < idx)
-	{
-		ptr = ptr->next;
-		ptrm = ptrm->next;
-		cp++;
-	}
-	if (idx > cp)
-		return (NULL);
-	if (ptr == NULL)
-		return (add_dnodeint_end(h, n));
 	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
 		return (NULL);
+	ptr = *h;
+	indexmax = get_max_node(h);
+	if (idx > indexmax)
+		return (NULL);
+	ptr = goToIndex(h, idx);
+	ptrM = ptr->prev;
 	new->n = n;
-	new->prev = ptrm;
-	new->next = ptr;
-	ptrm->next = new;
-	if (ptr != NULL)
-		ptr->prev = new;
+	if (ptrM != NULL)
+	{
+		ptrM->next = new;
+		new->prev = ptrM;
+		new->next = ptr;
+	}
+	else
+	{
+		*h = new;
+		new->prev = NULL;
+		new->next = ptr;
+	}
 	return (new);
 }
+
+
