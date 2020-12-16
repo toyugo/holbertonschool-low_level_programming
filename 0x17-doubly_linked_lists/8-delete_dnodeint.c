@@ -54,7 +54,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	ptr = *head;
 	indexmax = get_max_node(head);
 	if (index > indexmax || ptr == NULL)
-		return (0);
+		return (-1);
 	ptr = goToIndex(head, index);
 	ptrM = ptr->prev;
 	ptrP = ptr->next;
@@ -65,7 +65,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	if (ptrP != NULL)
 		ptrP->prev = ptrM;
 	free(ptr);
-	return (0);
+	return (1);
 }
 
 
