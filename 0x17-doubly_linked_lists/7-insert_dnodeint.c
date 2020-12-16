@@ -79,7 +79,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		ptr = goToIndex(h, idx);
 		ptrM = goToIndex(h, idx - 1);
-		printf("ptrm vault %i ptr vault %i\n", ptrM->n, ptr->n);
 		ptrM->next = new;
 		new->next = ptr;
 		new->prev = ptrM;
