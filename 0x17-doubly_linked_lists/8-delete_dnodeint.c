@@ -40,8 +40,8 @@ dlistint_t *goToIndex(dlistint_t **h, unsigned int idx)
 
 /**
  * delete_dnodeint_at_index - delete_dnodeint_at_index
- * @h: head
- * @idx: index
+ * @head: head
+ * @index: index
  * Return: sum
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
