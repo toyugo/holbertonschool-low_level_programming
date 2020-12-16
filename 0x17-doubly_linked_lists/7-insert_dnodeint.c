@@ -57,7 +57,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new->n = n;
 	ptr = *h;
 	indexmax = get_max_node(h);
-	printf("idx = %i indexmax = %i\n", idx, indexmax);
 	if (idx > indexmax)
 		return (NULL);
 	if (idx == indexmax)
