@@ -28,7 +28,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 }
 #include "hash_tables.h"
 /**
- * hash_table_set - hash_table_set
+ * shash_table_set - shash_table_set
  * @ht: hash table
  * @key: key
  * @value: value
@@ -66,7 +66,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 }
 
 /**
- * hash_table_get - hash_table_get
+ * shash_table_get - shash_table_get
  * @ht: hash table
  * @key: key
  * Return: chars associated value
