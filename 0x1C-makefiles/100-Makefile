@@ -3,10 +3,11 @@ SRC = main.c holberton.c
 OBJ = $(SRC:.c=.o)
 NAME = holberton
 CFLAGS = -Wall -Werror -Wextra -pedantic
-.PHONY: all clean oclean fclean re
+.PHONY: all
 
 all: $(SRC:.c=.o) m.h
 	$(CC) $(OBJ) -o $(NAME)
+.PHONY: clean oclean fclean re
 clean:
 	$(RM) *~ $(NAME)
 oclean:
